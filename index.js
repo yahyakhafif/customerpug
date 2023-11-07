@@ -15,17 +15,18 @@ let customers = [
     { id: '1588323375418', firstname: 'Peter', lastname: 'North', email: 'peter@north.com', phone: '901176' },
 ]
 
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
     res.send("Welcome to the home page");
 });
-
-app.get("/customers", (req, res) => {
+*/
+app.get("/", (req, res) => {
     res.render("customerList", { customers: customers });
 })
-
-app.get("/addcustomer", (req, res) => {
+/*
+app.get("/", (req, res) => {
     res.render("addCustomer");
 })
+*/
 
 app.post("/addcustomer", (req, res) => {
     const newCustomer = { firstname: req.body.firstname, lastname: req.body.lastname, email: req.body.email, phone: req.body.phone };
