@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'pug');
 
@@ -14,6 +14,10 @@ let customers = [
     { id: '1588323375417', firstname: 'Mary', lastname: 'Smith', email: 'mary@smith.com', phone: '6654113' },
     { id: '1588323375418', firstname: 'Peter', lastname: 'North', email: 'peter@north.com', phone: '901176' },
 ]
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the home page");
+});
 
 app.get("/customers", (req, res) => {
     res.render("customerList", { customers: customers });
