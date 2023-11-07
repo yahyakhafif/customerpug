@@ -1,9 +1,11 @@
 const express = require('express');
 const pug = require('pug');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
 
 const port = process.env.PORT || 3000;
 
