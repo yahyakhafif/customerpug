@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const port = 3000;
+
 app.set('view engine', 'pug');
 
 let customers = [
